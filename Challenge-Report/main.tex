@@ -33,7 +33,7 @@ For this task, the char dictionary will contain only 26 alphabet characters, so 
 This one hot representation would make sense since each word including spaces or other will deterministically be mapped to another aphetic space, so the concatenated chars may still contain the semantic meaning though the separation of each independent word can not be really found. In addition, ngram is chosen to represent the article in the raw feature space. To achieve a more robust feature extraction, a few n grams representation of each article will be stacked together.
 
 \subsection{NOVEL CNN}
-For novel classification, one uncertain issue to decide the appropriate size of filter in n gram convolutional layer; since the document is encrypted it is difficult to have a proper kernel size. So before the sequential model, a concatenated convolution layers with different kernel size is designed before the sequential model. After the the paralleled concatenated layers, I applied 3 convolutional layers and 2 fully connected layers. The architecture of the \textbf{NOVEL CNN} is shown in Fig.\ref{cnn}.
+For novel classification, one uncertain issue to decide the appropriate size of filter in n gram convolutional layer; since the document is encrypted it is difficult to have a proper kernel size. So before the sequential model, a concatenated convolution layers with different kernel size is designed before the sequential model. After the the paralleled concatenated layers, I applied 2 fully connected layers. The architecture of the \textbf{NOVEL CNN} is shown in Fig.\ref{cnn}.
 
 In addition to control the overfitting issues, a $50$ dropout rate is added after each fully connected layers. The length selection of each text will be mean of the text length in the training corpus. It is believed that the volume of the content in this task will contain enough information for text classification. Gradient descent is applied to perform the optimization.
 
@@ -46,7 +46,7 @@ In addition to control the overfitting issues, a $50$ dropout rate is added afte
 
 \section{Experiment}\label{exp}
 
-The data set contain more 30000 corpus. 80\% will be applied as training set and the rest of the data will be the test. 
+The data set contain more 30000 corpus. 80\% will be applied as training set and the rest of the data will be the test.
 \begin{table}
 \centering
 \begin{tabular}{|c|c|c|}
